@@ -55,10 +55,26 @@ for line in lines:
 file.close()
 print("Student details updated successfully")
 '''
-
+'''
 #Read file line  by line:
 
 file=open("students_details.txt","r")
+print("\n Reading file line by line")
+for line in file:
+    print(line.strip())
+file.close()
+'''
+#Remove lines containing 'n'
+input_file=open("students_details.txt","r")
+output_file=open("filtered.txt","r")
+for line in input_file:
+    if 'n' not in line:
+        output_file.write(line)
+input_file.close()
+output_file.close()
+print("\n Filtered file Created (no 'n' lines)")
+print("----------------------")
+file=open("filtered.txt","r")
 print("\n Reading file line by line")
 for line in file:
     print(line.strip())
