@@ -23,7 +23,7 @@ for line in file:
         found=True
 file.close()
 '''
-
+'''
 #Step 3: Delete Operation
 delete_id = "101"
 file=open("students_details.txt","r")
@@ -36,4 +36,33 @@ for line in lines:
     if data[0]!=delete_id:
         file.write(line)
 file.close()
+'''
+'''
+#Step 4: Update Student
+update_id="103"
+new_data="103,Pratham,88\n"
+
+file=open("students_details.txt","r")
+lines=file.readlines()
+file.close()
+file=open("students_details.txt","w")
+for line in lines:
+    data=line.strip().split(",")
+    if data[0]==update_id:
+        file.write(new_data)
+    else:
+        file.write(line)
+file.close()
+print("Student details updated successfully")
+'''
+
+#Read file line  by line:
+
+file=open("students_details.txt","r")
+print("\n Reading file line by line")
+for line in file:
+    print(line.strip())
+file.close()
+
+
     
